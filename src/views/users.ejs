@@ -1,0 +1,30 @@
+<%- include("./partials/head") %>
+<%- include("./partials/header") %>
+<main id="user-list">
+  <h1>Lista de usuários</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>E-mail</th>
+        <th>Idade</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>João</td>
+        <td>Silva</td>
+        <td>joaozinho123@email.com</td>
+        <td>20</td>
+        <td class="table-actions">
+          <a class="table-link-show">Visualizar</a>
+          <a class="table-link-edit">Editar</a>
+          <a class="table-link-delete">Excluir</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+<%- include("./partials/footer") %>
