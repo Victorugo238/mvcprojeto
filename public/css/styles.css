@@ -30,6 +30,9 @@ main {
   width: 100%;
   font-size: 1.2rem;
 }
+#user-list .table-container {
+  overflow-x: auto;
+}
 #user-list td,
 #user-list th {
   padding: 10px 5px;
@@ -44,15 +47,20 @@ main {
 #user-list tbody tr:hover {
   background-color: #7abee0ee;
 }
-
+#user-list .table-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 #user-list .table-actions a {
   padding: 5px 10px;
+  margin: 5px 0;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-}
-#user-list .table-actions a {
   text-decoration: none;
+  width: 100%;
+  text-align: center;
 }
 #user-list .table-actions a.table-link-show {
   background-color: #03293bee;
@@ -95,7 +103,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 40%;
+  width: 100%;
 }
 
 #user-create input,
@@ -107,6 +115,7 @@ main {
 }
 
 #user-create button,
+#user-delete button,
 #user-edit button {
   width: 50%;
   height: 40px;
@@ -118,20 +127,49 @@ main {
   border-radius: 10px;
 }
 #user-create button:hover,
+#user-delete button:hover,
 #user-edit button:hover {
   background-color: #03293baa;
 }
-#user {
+#user-delete button {
+  width: 100px;
+}
+#user-delete a button {
+  background-color: #0d9ee0ee;
+}
+#user,
+#user-delete {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#user div {
+#user div,
+#user-delete div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-#user span {
+#user span,
+#user-delete span {
   font-size: 1.2rem;
   font-weight: 700;
+}
+/* Tablet */
+@media only screen and (min-width: 600px) {
+  #user-create form,
+  #user-edit form {
+    width: 60%;
+  }
+}
+/* Desktop */
+@media only screen and (min-width: 992px) {
+  #user-list .table-actions {
+    width: auto;
+    display: block;
+  }
+  #user-create form,
+  #user-edit form {
+    width: 40%;
+    max-width: 600px;
+  }
 }

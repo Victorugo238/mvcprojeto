@@ -1,0 +1,14 @@
+<%- include("./partials/head") %>
+<%- include("./partials/header") %>
+<main id="user-create">
+  <h1>Adicionar usuário</h1>
+  <form action="/user" method="post">
+    <input type="text" name="nome" placeholder="Nome" required />
+    <input type="text" name="sobrenome" placeholder="Sobrenome" />
+    <input type="email" name="email" placeholder="Email" />
+    <input type="number" name="idade" placeholder="Idade" />
+    <input type="number" name="avatar" placeholder="Número do Avatar" />
+    <button type="submit">Adicionar</button>
+  </form>
+</main>
+<%- include("./partials/footer") %>
