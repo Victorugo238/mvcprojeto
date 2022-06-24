@@ -1,0 +1,18 @@
+<%- include("./partials/head") %>
+<main>
+  <h1>Usuario</h1>
+  <% if(users.length > 0){ %>
+    <% for (let user of users) { %>
+      <div>
+        <h2><%= user.nome %></h2>
+        <span><%= user.sobrenome %></span>
+        <p><%= user.idade %></p>
+      </div>
+    <% } %>
+  <% }else {%>
+    <h1>Nenhum produto encontrado</h1>
+  <% }%>
+
+  
+</main>
+<%- include("./partials/footer") %>
