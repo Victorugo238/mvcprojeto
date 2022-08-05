@@ -7,6 +7,7 @@ const port = 3000;
 const methodOverride = require("method-override");
 const indexRoute = require("./src/routes/indexRoute");
 const userRoute = require("./src/routes/userRoute");
+const categoryRouter = require("./src/routes/categoryRouter");
 
 // Configura pasta estática para acesso externo
 app.use(express.static(__dirname + "/public"));
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/", indexRoute);
 app.use("/user", userRoute);
+app.use("/category", categoryRouter);
 
 app.listen(port, () => {
   console.log("Estamos rodando na porta" + port);

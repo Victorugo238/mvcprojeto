@@ -1,0 +1,16 @@
+<%- include("./partials/head") %>
+<%- include("./partials/header") %>
+<main id="user">
+  <h1>Visualizar Categoria</h1>
+  <% if(locals.user){ %>
+    <div>
+      <img src="<%= user.imagem %>" alt="avatar"/>
+      <span><%= user.nome %> <%= user.sobrenome %></span>
+      <span><%= user.descricao %></span>
+      <span><%= user.codigo %></span>
+    </div>
+  <% } else {%>
+    <h2 class="error-alert">Categoria não encontrado por motivos do além</h2>
+  <% } %>
+</main>
+<%- include("./partials/footer") %>

@@ -2,16 +2,15 @@
 <%- include("./partials/head") %> 
 <%- include("./partials/header") %>
 <main id="user-create">
-  <h1>Adicionar usuário</h1>
+  <h1>Adicionar Categoria</h1>
   <% if(locals.error){ %>
     <h2 class="error-alert"><%= error.message %></h2>
   <% } %>
-  <form action="/user/create" method="post">
+  <form action="/category/create" method="post">
     <input type="text" name="nome" placeholder="Nome" required />
-    <input type="text" name="sobrenome" placeholder="Sobrenome" />
-    <input type="email" name="email" placeholder="Email" />
-    <input type="number" name="idade" placeholder="Idade" />
-    <input type="number" name="avatar" placeholder="Número do Avatar" />
+    <input type="text" name="descricao" placeholder="Descrição" />
+    <input type="text" name="codigo" placeholder="Codigo" />
+    <input type="number" name="imagem" placeholder="Número da Imagem" />
     <button type="submit">Adicionar</button>
   </form>
 </main>

@@ -1,0 +1,20 @@
+<%- include("./partials/head") %>
+<%- include("./partials/header") %>
+<main id="user-delete">
+  <h1>Deletar Cetegoria</h1>
+  <% if(locals.delcat){ %>
+    <div>
+      <img src="<%= delcat.imagem %>" alt="imagem"/>
+      <span><%= delcat.nome %> <%= delcat.descricao %></span>
+      <span><%= delcat.codigo %></span>
+    </div>
+    <form action="/category/delete/<%= delcat.id %>?_method=delete" method="post">
+      <h2 class="error-alert">Deseja deletar esse categoria?</h2>
+      <a href="/categoria"><button type="button">Não</button></a>
+      <button type="submit">Sim</button>
+    </form>
+  <% } else {%>
+    <h2 class="error-alert">Categoria não encontrado por motivos do além</h2>
+  <% } %>
+</main>
+<%- include("./partials/footer") %>

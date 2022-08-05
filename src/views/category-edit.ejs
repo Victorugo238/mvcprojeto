@@ -1,0 +1,16 @@
+<%- include("./partials/head") %> 
+<%- include("./partials/header") %>
+<main id="user-create">
+  <h1>Atualizar categoria</h1>
+  <% if(locals.error){ %>
+  <h2 class="error-alert"><%= error.message %></h2>
+  <% } %>
+  <form action="/category/edit/<%= resultCategoria.id %>?_method=put" method="post">
+    <input value="<%= resultCategoria.nome %>" type="text" name="nome" placeholder="Nome" />
+    <input value="<%= resultCategoria.descricao %>" type="text" name="descricao" placeholder="descricao" />
+    <input value="<%= resultCategoria.codigo %>" type="text" name="codigo" placeholder="Codigo" />
+    <input value="<%= resultCategoria.imagem.split("=")[1] %>" type="number" name="imagem" placeholder="Número do Imagem" />
+    <button type="submit">Atualizar</button>
+  </form>
+</main>
+<%- include("./partials/footer") %>

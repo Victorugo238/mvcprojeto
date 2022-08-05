@@ -1,0 +1,38 @@
+<%- include("./partials/head") %> 
+<%- include("./partials/header") %>
+<main id="user-list">
+  <h1>Lista de Categorias</h1>
+  <% if(categorias.length > 0){ %>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Codigo</th>
+            <th>Imagem</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let category of categorias) { %>
+          <tr>
+            <td><%= category.nome %></td>
+            <td><%= category.descricao %></td>
+            <td><%= category.codigo %></td>
+            <td><%= category.imagem %></td>
+            <td class="table-actions">
+              <a href="/category/<%= category.id %>" class="table-link-show">Visualizar</a>
+              <a href="/category/edit/<%= category.id %>" class="table-link-edit">Editar</a>
+              <a href="/category/delete/<%= category.id %>" class="table-link-delete">Excluir</a>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  <% } else { %>
+    <h2 class="error-alert">Nenhuma categoria encontrada</h2>
+  <%} %>
+</main>
+<%- include("./partials/footer") %>
